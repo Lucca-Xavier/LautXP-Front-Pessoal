@@ -1,0 +1,39 @@
+<div class="modal-header">
+    <h6 class="modal-title">Recuperar Senha</h6>
+    <button type="button" (click)="close()" class="close pull-right" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="card-body p-1 text-center">
+
+        <p>Para criar uma conta preencha todos os campos.</p>
+
+        <form [formGroup]="form">
+            <div class="card-body">
+                <div class="row">
+
+                    <app-input [control]="form.controls.userName" (keydown.enter)="salvar()"
+                        [placeholder]="'Nome de Usuário'" class="col-md-6"></app-input>
+
+                    <app-input [control]="form.controls.phoneNumber" (keydown.enter)="salvar()"
+                        [placeholder]="'Telefone Celular'" class="col-md-6" [format]="'(00) 00000-0000'"></app-input>
+
+                    <app-input [control]="form.controls.email" (keydown.enter)="salvar()" [placeholder]="'Email'"
+                        [type]="'email'" class="col-md-12"></app-input>
+
+                    <app-input [control]="form.controls.password" (keydown.enter)="salvar()" [placeholder]="'Senha'"
+                        class="col-md-6"></app-input>
+
+                    <app-input [control]="form.controls.confirmPassword" (keydown.enter)="salvar()"
+                        [placeholder]="'Confirmar Senha'" class="col-md-6"></app-input>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="close()">Close</button>
+    <button type="button" class="btn btn-outline-success" (click)="salvar()">Enviar</button>
+</div>

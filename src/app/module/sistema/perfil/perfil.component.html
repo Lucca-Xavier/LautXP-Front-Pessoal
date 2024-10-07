@@ -1,0 +1,172 @@
+<div class="card card-body">
+    <div class="row">
+        <div class="col-md-8">
+            <h4 class="font-weight-bold py-1 mb-2">
+                <span class="text-muted font-weight-light">Perfil</span>
+            </h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="alert alert-danger" role="alert" *ngIf="msgalert.length > 0">
+                <b style="color: red;">*</b> {{msgalert}}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <h5 class="font-weight-bold py-1 mb-2">
+                <span>Dados Básicos</span>
+            </h5>
+            <div class="card-body" *ngIf="tipoSelecionado === 'PJ'">
+                <form [formGroup]="formPJ">
+                    <div class="row">
+
+                        <app-select [control]="formPJ.controls.tipoPessoa" [label]="'Tipo Pessoa'" [data]="tiposPessoa"
+                            (change)="selecaoTipo($event)" (keydown.enter)="salvar()" [permiteNull]="false"
+                            class="col-md-3"></app-select>
+
+                        <app-input [control]="formPJ.controls.razaoSocial" (keydown.enter)="salvar()"
+                            [placeholder]="'Razão Social'" class="col-md-9"></app-input>
+
+                        <app-input [control]="formPJ.controls.nome" (keydown.enter)="salvar()"
+                            [placeholder]="'Nome Fantasia'" class="col-md-8"></app-input>
+
+                        <app-input [control]="formPJ.controls.cpfCnpj" (keydown.enter)="salvar()"
+                            [format]="'00.000.000/0000-00'" [placeholder]="'CNPJ'" class="col-md-4"></app-input>
+
+                        <app-input [control]="formPJ.controls.ie" (keydown.enter)="salvar()"
+                            [placeholder]="'Inscrição Estadual'" class="col-md-4"></app-input>
+
+                    </div>
+                </form>
+            </div>
+
+            <div class="card-body" *ngIf="tipoSelecionado === 'PF'">
+                <form [formGroup]="formPF">
+                    <div class="row">
+
+                        <app-select [control]="formPF.controls.tipoPessoa" [label]="'Tipo Pessoa'" [data]="tiposPessoa"
+                            (change)="selecaoTipo($event)" (keydown.enter)="salvar()" [permiteNull]="false"
+                            class="col-md-3"></app-select>
+
+                        <app-input [control]="formPF.controls.nome" (keydown.enter)="salvar()" [placeholder]="'Nome'"
+                            class="col-md-9"></app-input>
+
+                        <app-select [control]="formPF.controls.sexo" [label]="'Sexo'" [data]="sexos"
+                            (keydown.enter)="salvar()" class="col-md-4"></app-select>
+
+                        <app-input [control]="formPF.controls.dataNascimento" (keydown.enter)="salvar()"
+                            [placeholder]="'Data de Nascimento'" [format]="'00/00/0000'" class="col-md-4"></app-input>
+
+                        <app-input [control]="formPF.controls.cpfCnpj" (keydown.enter)="salvar()" [placeholder]="'CPF'"
+                            [format]="'000.000.000-00'" class="col-md-4"></app-input>
+
+                        <app-input [control]="formPF.controls.mae" (keydown.enter)="salvar()"
+                            [placeholder]="'Nome da Mãe'" class="col-md-6"></app-input>
+
+                        <app-input [control]="formPF.controls.pai" (keydown.enter)="salvar()"
+                            [placeholder]="'Nome da Pai'" class="col-md-6"></app-input>
+
+                        <app-input [control]="formPF.controls.rg" (keydown.enter)="salvar()" [placeholder]="'RG'"
+                            class="col-md-4"></app-input>
+
+                        <app-input [control]="formPF.controls.orgaoExpeditor" (keydown.enter)="salvar()"
+                            [placeholder]="'Orgão Expedidor'" class="col-md-4"></app-input>
+
+                        <app-input [control]="formPF.controls.dataExpedicao" (keydown.enter)="salvar()"
+                            [placeholder]="'Data Expedição'" [format]="'00/00/0000'" class="col-md-4"></app-input>
+
+                    </div>
+                </form>
+            </div>
+
+            <!---->
+            <h5 class="font-weight-bold py-1 mb-2">
+                <span>Contato</span>
+            </h5>
+            <form [formGroup]="formContato">
+                <div class="card-body">
+                    <div class="row">
+
+                        <app-input [control]="formContato.controls.telefoneCelular" (keydown.enter)="salvar()"
+                            [placeholder]="'Telefone Celular'" [format]="'(00) 00000-0000'"
+                            class="col-md-6"></app-input>
+
+                        <app-input [control]="formContato.controls.telefoneComercial" (keydown.enter)="salvar()"
+                            [placeholder]="'Telefone Comercial'" [format]="'(00) 0000-0000'"
+                            class="col-md-6"></app-input>
+
+                        <app-input [control]="formContato.controls.email" (keydown.enter)="salvar()"
+                            [placeholder]="'Email'" [type]="'email'" class="col-md-12"></app-input>
+
+                        <app-input [control]="formContato.controls.site" (keydown.enter)="salvar()"
+                            [placeholder]="'Site'" class="col-md-12" *ngIf="tipoSelecionado === 'PJ'"></app-input>
+                    </div>
+                </div>
+            </form>
+
+            <!---->
+            <h5 class="font-weight-bold py-1 mb-2">
+                <span>Endereço</span>
+            </h5>
+            <form [formGroup]="formEndereco">
+                <div class="card-body">
+                    <div class="row">
+
+                        <app-input [control]="formEndereco.controls.cep" (keydown.enter)="salvar()"
+                            [placeholder]="'CEP'" [format]="'00000-000'" (change)="buscarCep()" class="col-md-3">
+                        </app-input>
+
+                        <app-input [control]="formEndereco.controls.logradouro" (keydown.enter)="salvar()"
+                            [placeholder]="'Logradouro'" class="col-md-7"></app-input>
+
+                        <app-input [control]="formEndereco.controls.numero" (keydown.enter)="salvar()"
+                            [placeholder]="'Número'" class="col-md-2"></app-input>
+
+                        <app-input [control]="formEndereco.controls.uf" (keydown.enter)="salvar()" [placeholder]="'Uf'"
+                            class="col-md-4"></app-input>
+
+                        <app-input [control]="formEndereco.controls.cidade" (keydown.enter)="salvar()"
+                            [placeholder]="'Cidade'" class="col-md-4"></app-input>
+
+                        <app-input [control]="formEndereco.controls.bairro" (keydown.enter)="salvar()"
+                            [placeholder]="'Bairro'" class="col-md-4"></app-input>
+
+                        <app-input [control]="formEndereco.controls.complemento" (keydown.enter)="salvar()"
+                            [placeholder]="'Complemento'" class="col-md-12"></app-input>
+
+                        <app-input [control]="formEndereco.controls.referencia" (keydown.enter)="salvar()"
+                            [placeholder]="'Referência'" class="col-md-12"></app-input>
+                    </div>
+                </div>
+            </form>
+            <!---->
+            <h5 class="font-weight-bold py-1 mb-2">
+                <span>Observações</span>
+            </h5>
+            <form [formGroup]="formObs">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label class="control-label">Observações</label>
+                                <textarea name="observacoes" id="observacoes" formControlName="observacoes"
+                                    class="form-control" maxlength="1000" cols="10" rows=2
+                                    (keydown.enter)="salvar()"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div style="text-align: right;">
+        <button type="button" class="btn btn-primary" (click)="salvar()">
+            <span class="fa fa-save"></span> Salvar
+        </button>
+    </div>
+</div>

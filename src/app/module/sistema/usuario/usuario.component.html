@@ -1,0 +1,50 @@
+<div class="card card-body">
+    <div class="row">
+        <div class="col-md-10">
+            <h4 class="font-weight-bold py-1 mb-2">
+                <span class="text-muted font-weight-light">Sistema</span> / Usuários
+            </h4>
+        </div>
+
+        <div class="col-md-2">
+            <div class="text-right">
+                <button class="btn btn-primary" type="button" (click)="crud(0)">
+                    <span class="fa fa-plus-circle"></span>&nbsp;&nbsp;Novo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <table cTable [responsive]="true">
+            <thead cTableColor="light">
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Login</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Tipo Usuário</th>
+                    <th scope="col">Situação</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of usuarios">
+                    <td>{{item.nome}}</td>
+                    <td>{{item.login}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.tipoUsuario}}</td>
+                    <td>{{item.situacao}}</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" ngbTooltip="Editar" style="margin-right: 3px;"
+                            (click)="crud(item.idUsuario)">
+                            <span class="fa fa-edit"></span>
+                        </button>
+                        <button class="btn btn-sm btn-danger" ngbTooltip="Excluir">
+                            <span class="fa fa-trash"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

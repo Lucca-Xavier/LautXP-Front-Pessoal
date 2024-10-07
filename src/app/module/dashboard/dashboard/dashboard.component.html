@@ -1,0 +1,16 @@
+<c-card class="mb-4">
+    <c-card-body>
+
+        <c-row>
+            <div class="row">
+                <h4 class="card-title mb-0" id="traffic">Angular 15 Template</h4>
+                <div class="col-md-6">
+                    <c-chart type="line" [data]="data" [options]="options"></c-chart>
+                </div>
+                <div class="col-md-6">
+                    <c-chart [data]="githubData" type="bar"></c-chart>
+                </div>
+            </div>
+        </c-row>
+    </c-card-body>
+</c-card>

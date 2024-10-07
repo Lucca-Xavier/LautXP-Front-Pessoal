@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+// If you want to override variables do it here
+$enable-ltr: true;
+$enable-rtl: true;
+// Import styles with default layout.
+@import "@coreui/coreui/scss/coreui";
+@import 'ngx-toastr/toastr';
+
+@import "layout";
+
+// Some temp fixes
+@import "fixes";
+
+// Prism.js
+@import "examples";
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+$sidebar-bg: white;
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar {
+    //--cui-sidebar-bg: #{$sidebar-bg};
+    --cui-font-sans-serif: "Segoe UI";
+
+}

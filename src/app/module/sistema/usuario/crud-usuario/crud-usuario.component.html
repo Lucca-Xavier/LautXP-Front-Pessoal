@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h6 class="modal-title">Sistema/ Usuário</h6>
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+
+<div class="modal-body">
+    <div class="card-body">
+        <form [formGroup]="form">
+            <div class="row">
+
+                <app-input [control]="form.controls.nome" (keydown.enter)="salvar()" [placeholder]="'Nome'"
+                    class="col-md-6"></app-input>
+
+                <app-input [control]="form.controls.login" (keydown.enter)="salvar()" [placeholder]="'Login'"
+                    class="col-md-6"></app-input>
+
+                <app-input [control]="form.controls.email" (keydown.enter)="salvar()" [type]="'email'"
+                    [placeholder]="'Email'" class="col-md-12"></app-input>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="close()">Fechar</button>
+    <button type="button" class="btn btn-outline-success" (click)="salvar()">
+        <span class="fa fa-save"></span> Salvar
+    </button>
+</div>

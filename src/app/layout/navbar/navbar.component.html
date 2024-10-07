@@ -1,0 +1,36 @@
+<c-navbar class="bg-light" colorScheme="light" expand="lg" style="width: 100%; padding: 0;">
+    <c-container [fluid]=" true" style="width: 100%;">
+        <div class="d-flex  justify-content-between" style="width: 100%;">
+            <button toggle="visible" cHeaderToggler [cSidebarToggle]="sidebarId" class="ps-1">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div>
+                <ng-container *ngTemplateOutlet="userDropdown"></ng-container>
+            </div>
+        </div>
+    </c-container>
+</c-navbar>
+
+<ng-template #userDropdown>
+    <c-dropdown alignment="end" variant="nav-item">
+        <button cButton color="" [caret]="false" cDropdownToggle class="py-0"
+            style="border: 0;margin-top: 50%; background-color: white;">
+            <span class="fa fa-cog"></span>
+        </button>
+        <ul cDropdownMenu class="pt-0 pr-5 w-auto">
+            <li>
+                <h6 cDropdownHeader class="fw-semibold py-2" style="background-color: rgb(226, 226, 226);">
+                    Opções</h6>
+            </li>
+            <li>
+                <button cDropdownItem routerLink="sistema/perfil"> <i class="fa fa-user-circle-o"
+                        aria-hidden="true"></i> Meu
+                    Perfil</button>
+            </li>
+            <li>
+                <button cDropdownItem (click)="logout()"> <span class="fa fa-sign-out"></span> Sair
+                </button>
+            </li>
+        </ul>
+    </c-dropdown>
+</ng-template>

@@ -1,0 +1,15 @@
+<div class="form-group">
+    <label class="control-label required">{{label}}</label>
+
+    <select class="form-select" selected [formControl]="control" [ngClass]="mostrarCSSErro(control)" *ngIf="!newSelect">
+        <option selected value='' *ngIf="permiteNull && string">Selecione...</option>
+        <option selected [ngValue]="null" *ngIf="permiteNull && !string">Selecione...</option>
+        <option *ngFor="let item of data" [value]="item.value">{{item.text}}</option>
+    </select>
+
+    <select class="form-select" [formControl]="control" [ngClass]="mostrarCSSErro(control)" *ngIf="newSelect">
+        <option [value]="null">Selecione...</option>
+        <option *ngFor="let item of data" [value]="item.id">{{item.descricao}}</option>
+    </select>
+
+</div>

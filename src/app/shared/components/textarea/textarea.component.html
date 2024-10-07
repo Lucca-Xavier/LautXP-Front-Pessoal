@@ -1,0 +1,5 @@
+<div class="form-group" style="margin-bottom: 5px;">
+    <label class="control-label " [ngClass]="labelRequired()">{{placeholder}}</label>
+    <textarea name="descricao" id="descricao" [cols]="cols" [rows]="rows" [formControl]="control" class="form-control"
+        [placeholder]="placeholder" [ngClass]="mostrarCSSErro(control)"></textarea>
+</div>
