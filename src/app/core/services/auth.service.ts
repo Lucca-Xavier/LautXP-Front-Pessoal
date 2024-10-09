@@ -32,14 +32,14 @@ export class AuthService {
   }
 
   doRefreshToken() {
-    const refreshToken = this.getToken?.refresh_token;
+    const refreshToken = this.getToken?.refreshToken;
     return this.http.post(this.url + `auth/token`, { grantType: 'refresh_token', refreshToken: refreshToken, userName: 'vendedor' });
   }
 
   setToken(token: any): Token {
     const newToken: Token = {
-      token: token.access_token,
-      refresh_token: token.refresh_token
+      token: token.accessToken,
+      refreshToken: token.refreshToken
     }
     localStorage.setItem('token', JSON.stringify(newToken));
     return newToken;

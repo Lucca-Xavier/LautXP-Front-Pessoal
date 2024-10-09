@@ -7,7 +7,7 @@ import { Produto } from '../models/produto';
   providedIn: 'root'
 })
 export class ProdutoService {
-  private url = environment.baseUrl + 'api/produto'
+  private url = environment.baseUrl + 'api/produto/'
 
   constructor(private http: HttpClient) { }
 
