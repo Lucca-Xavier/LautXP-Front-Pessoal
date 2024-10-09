@@ -1,0 +1,14 @@
+<app-modal [text]="'Vendas'" (close)="close()" (salvar)="salvar()">
+    <div class="card-body">
+      <form [formGroup]="form">
+        <div class="row">
+          <app-input [control]="form.controls.quantidade" [placeholder]="'Quantidade'" [type]="'number'" class="col-md-12"
+            [id]="'quantidade'"></app-input>
+
+
+            <app-select [control]="form.controls.idProduto" [data]="produtosEstatico" [label]="'Produto'" [permiteNull]="false">
+            </app-select>
+        </div>
+      </form>
+    </div>
+  </app-modal>

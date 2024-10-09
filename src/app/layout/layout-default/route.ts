@@ -7,6 +7,11 @@ export const navItems: INavData[] = [
         icon: 'fa fa-bar-chart'
     },
     {
+        name: 'Vendas',
+        url: '/home/vendas',
+        icon: 'fa fa-money'
+    },
+    {
         name: 'Cadastro',
         icon: 'fa fa-plus-square-o',
         url: '/home/cadastro',
@@ -14,6 +19,18 @@ export const navItems: INavData[] = [
             {
                 name: 'Cliente',
                 url: 'cadastro/cliente'
+            },
+            {
+                name: 'Produto',
+                url: 'cadastro/produto'
+            },
+            {
+                name: 'Campanha',
+                url: 'cadastro/campanha'
+            },
+            {
+                name: 'Publicidade',
+                url: 'cadastro/publicidade'
             }
         ]
     },

@@ -1,0 +1,17 @@
+<app-modal [text]="'Cadastro / Campanha'" (close)="close()" (salvar)="salvar()">
+    <div class="card-body">
+        <form [formGroup]="form">
+            <div class="row">
+                <app-input [control]="form.controls.nome" [placeholder]="'Nome'" class="col-md-12"
+                    [id]="'nome'"></app-input>
+
+                <app-input [control]="form.controls.inicio" [placeholder]="'Data de Início'" class="col-md-6"
+                    [id]="'inicio'" [type]="'date'"></app-input>
+
+                <app-input [control]="form.controls.fim" [placeholder]="'Data Fim'" class="col-md-6"
+                    [id]="'fim'" [type]="'date'"></app-input>
+
+            </div>
+        </form>
+    </div>
+</app-modal>
