@@ -34,7 +34,7 @@ export class RegistroComponent {
   salvar() {
     if (this.form.valid) {
       this.authService.register(this.form.getRawValue()).subscribe(data => {
-        this.toastrService.success('Conta criado com sucesso');
+        this.toastrService.success('Conta criada com sucesso');
         this.close();
       }, err => {
         this.toastrService.error(err)

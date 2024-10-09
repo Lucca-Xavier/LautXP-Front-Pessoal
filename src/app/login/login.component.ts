@@ -42,7 +42,7 @@ export class LoginComponent {
       this.authService.login(this.form.getRawValue())
         .pipe(finalize(() => { this.loaderService.setLoading(false) }))
         .subscribe({
-          next: (data: any) => {
+          next: (data) => {
             this.router.navigate(['home/dashboard']);
           },
           error: err => {

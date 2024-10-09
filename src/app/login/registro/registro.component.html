@@ -23,10 +23,10 @@
                         [type]="'email'" class="col-md-12"></app-input>
 
                     <app-input [control]="form.controls.password" (keydown.enter)="salvar()" [placeholder]="'Senha'"
-                        class="col-md-6"></app-input>
+                        class="col-md-6" [type]="'password'"></app-input>
 
                     <app-input [control]="form.controls.confirmPassword" (keydown.enter)="salvar()"
-                        [placeholder]="'Confirmar Senha'" class="col-md-6"></app-input>
+                        [placeholder]="'Confirmar Senha'" class="col-md-6" [type]="'password'"></app-input>
                 </div>
             </div>
         </form>
