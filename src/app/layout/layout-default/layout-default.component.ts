@@ -10,12 +10,12 @@ import { navItems } from './route';
       src: 'assets/img/brand/coreui-angular.svg',
       width: 200,
       height: 46,
-      alt: 'Angular 15 Template'
+      alt: 'LautXp'
     }" [brandNarrow]="{
       src: 'assets/img/brand/coreui-signet-white.svg',
       width: 46,
       height: 46,
-      alt: 'Angular 15 Template'
+      alt: 'LautXp'
     }" routerLink="./">
     </c-sidebar-brand>
     <c-sidebar-nav [navItems]="navItems" dropdownMode="close">

@@ -1,0 +1,13 @@
+<app-modal [text]="'Cadastro / Produto'" (close)="close()" (salvar)="salvar()">
+  <div class="card-body">
+    <form [formGroup]="form">
+      <div class="row">
+        <app-input [control]="form.controls.rotulo" [placeholder]="'Rótulo'" class="col-md-12"
+          [id]="'rotulo'"></app-input>
+
+        <app-select [control]="form.controls.tamanho" [data]="tiposTamanho" [label]="'Tamanho'" [permiteNull]="false">
+        </app-select>
+      </div>
+    </form>
+  </div>
+</app-modal>

@@ -1,0 +1,30 @@
+<app-modal [text]="'Cadastro / Produto'" (close)="close()" (salvar)="salvar()">
+    <div class="card-body">
+        <form [formGroup]="form">
+            <div class="row">
+                <app-input [control]="form.controls.nome" [placeholder]="'Nome'" class="col-md-12"
+                    [id]="'nome'"></app-input>
+
+                <div class="col-md-12">
+                    <div class="form-group ">
+                        <label class="control-label">Anexo</label>
+                        <div>
+                            <input #anexo type="file" placeholder="anexar" id="anexo" name="files[]"
+                                (change)="fileEvent($event)" hidden/>
+                            <button type="button" class="btn btn-outline-secondary" (click)="anexo.click()"
+                                style="width: 25%;">
+                                <span class="fa fa-paperclip"></span> Anexar Arquivos
+
+                            </button>
+                            <span id="anexoName" style="margin-left: 5px;">Nenhum arquivo escolhido</span>
+
+                            <div *ngIf="form.controls.arquivo.touched && form.controls.arquivo.invalid" style="color: red">
+                                <p *ngIf="form.controls.arquivo.errors?.required">Arquivo é obrigatório.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</app-modal>
