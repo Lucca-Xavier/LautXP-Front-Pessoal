@@ -8,7 +8,7 @@ import { Publicidade } from '../models/publicidade';
 })
 export class PublicidadeService {
 
-  private url = environment.baseUrl + 'api/publicidade'
+  private url = environment.baseUrl + 'api/publicidade/'
 
   constructor(private http: HttpClient) { }
 

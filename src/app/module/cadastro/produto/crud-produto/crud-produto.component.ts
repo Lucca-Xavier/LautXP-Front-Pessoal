@@ -23,6 +23,8 @@ export class CrudProdutoComponent {
     id: new FormControl(0, { validators: Validators.required, nonNullable: true }),
     rotulo: new FormControl('', { validators: Validators.required, nonNullable: true }),
     tamanho: new FormControl(300, { validators: Validators.required, nonNullable: true }),
+    isActive: new FormControl(true, { validators: Validators.required, nonNullable: true }),
+
   });
   
 

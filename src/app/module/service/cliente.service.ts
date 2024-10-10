@@ -7,7 +7,7 @@ import { Cliente } from '../models/cliente';
   providedIn: 'root'
 })
 export class ClienteService {
-  private url = environment.baseUrl + 'api/cliente'
+  private url = environment.baseUrl + 'api/cliente/'
 
   constructor(private http: HttpClient) { }
 
