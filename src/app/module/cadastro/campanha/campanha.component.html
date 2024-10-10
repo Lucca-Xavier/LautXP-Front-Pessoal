@@ -28,19 +28,19 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th>1</th>
-                <td>Halloween</td>
-                <td>01/10/2024</td>
-                <td>31/10/2024</td>
-                <td>Ativa</td>
+            <tr *ngFor="let item of campanhas">
+                <th>{{item.id}}</th>
+                <td>{{item.nome}}</td>
+                <td>{{item.inicio | date:'dd/MM/yyyy'}}</td>
+                <td>{{item.fim | date:'dd/MM/yyyy'}}</td>
                 <td>
-                    <button class="btn btn-primary btn-sm" style="margin-right: 3px" (click)="crud(0)">
-                        <!--- dentro do for each item.id-->
+                    <p class=" badge rounded-pill" style="min-width: 5.5em;" [ngClass]="item.isActive?'bg-success': 'bg-danger'">{{item.isActive?'Ativa':'Inativa'}}</p></td>
+                <td>
+                    <button class="btn btn-primary btn-sm" style="margin-right: 3px" (click)="crud(item.id)">
                         <span class="fa fa-edit"></span>
                     </button>
 
-                    <button class="btn btn-sm btn-danger" ngbTooltip="Excluir">
+                    <button class="btn btn-sm btn-danger" ngbTooltip="Excluir" (click)="excluir(item.id)">
                         <span class="fa fa-trash"></span>
                     </button>
                 </td>

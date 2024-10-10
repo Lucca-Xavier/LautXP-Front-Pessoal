@@ -22,6 +22,7 @@
         <th>#</th>
         <th>Rotulo</th>
         <th>Tamanho</th>
+        <th>Status</th>
         <th>Ações</th>
       </tr>
     </thead>
@@ -30,6 +31,7 @@
         <th> {{item.id}} </th>
         <td> {{item.rotulo}} </td>
         <td> {{item.tamanho}} </td>
+        <td>{{item.isActive}}</td>
         <td>
           <button class="btn btn-primary btn-sm" style="margin-right: 3px" (click)="crud(item.id)">
             <span class="fa fa-edit"></span>
