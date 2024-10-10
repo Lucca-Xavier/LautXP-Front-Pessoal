@@ -23,7 +23,7 @@ export class AuthService {
   }
 
   login(data: LoginData) {
-    return this.http.post(this.url + `auth/token`, { userName: data.email, password: data.password, grantType: 'password' })
+    return this.http.post(this.url + `api/auth/token`, { userName: data.email, password: data.password, grantType: 'password' })
       .pipe(map((token: any) => {
         const newToken = this.setToken(token);
         this.userSubject.next(newToken);
@@ -33,7 +33,7 @@ export class AuthService {
 
   doRefreshToken() {
     const refreshToken = this.getToken?.refreshToken;
-    return this.http.post(this.url + `auth/token`, { grantType: 'refresh_token', refreshToken: refreshToken, userName: 'vendedor' });
+    return this.http.post(this.url + `api/auth/token`, { grantType: 'refresh_token', refreshToken: refreshToken, userName: 'vendedor' });
   }
 
   setToken(token: any): Token {
@@ -46,7 +46,7 @@ export class AuthService {
   }
 
   register(data: RegisterData) {
-    return this.http.post(this.url + `auth/register`, data);
+    return this.http.post(this.url + `api/auth/register`, data);
   }
 
   logout() {
