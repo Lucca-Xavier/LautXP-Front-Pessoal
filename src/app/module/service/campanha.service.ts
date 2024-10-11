@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CampanhaService {
-  private url = environment.baseUrl + 'api/campanha'
+  private url = environment.baseUrl + 'api/campanha/'
 
   constructor(private http: HttpClient) { }
 

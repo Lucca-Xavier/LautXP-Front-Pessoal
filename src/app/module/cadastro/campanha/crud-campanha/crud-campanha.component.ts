@@ -20,7 +20,7 @@ export class CrudCampanhaComponent {
     nome: new FormControl('', { validators: Validators.required, nonNullable: true }),
     inicio: new FormControl('', { validators: Validators.required, nonNullable: true }),
     fim: new FormControl('', { validators: Validators.required, nonNullable: true }),
-    status: new FormControl('ativa', { validators: Validators.required, nonNullable: true }),
+    isActive: new FormControl(true, { validators: Validators.required, nonNullable: true }),
   });
 
 
