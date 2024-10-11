@@ -9,8 +9,12 @@ import { CrudPublicidadeComponent } from './crud-publicidade/crud-publicidade.co
   ]
 })
 export class PublicidadeComponent {
+excluir(arg0: any) {
+throw new Error('Method not implemented.');
+}
 
   campanhas: any[] = []
+publicidade: any;
 
   constructor(
     private modalService: NgbModal,
