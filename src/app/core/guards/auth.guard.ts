@@ -9,6 +9,7 @@ export class AuthGuard {
   }
   canActivate() {
     const token = this.authService.getToken;
+ publicidadecomponent
     //return true
     //Check if the token is expired or not and if token is expired then redirect to login page and return false
     if (token && !this.jwtHelper.isTokenExpired(token.token)) {
@@ -16,6 +17,6 @@ export class AuthGuard {
     }
 
     this.router.navigate(["/login"]);
-    return false;
+    return false; 
   }
 }

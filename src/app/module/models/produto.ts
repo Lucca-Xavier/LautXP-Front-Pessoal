@@ -1,5 +1,6 @@
 export interface Produto{
     id : number,
     rotulo: string,
-    tamanho: number
+    tamanho: number,
+    isActive: boolean
 }
