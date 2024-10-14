@@ -20,7 +20,7 @@ export class CrudPublicidadeComponent {
     id: new FormControl(0, { validators: Validators.required, nonNullable: true }),
     nome: new FormControl('', { validators: Validators.required, nonNullable: true }),
     arquivo: new FormControl(null as File | null, { validators: Validators.required, nonNullable: true }),
-    status: new FormControl('ativa', { validators: Validators.required, nonNullable: true }),
+    isActive: new FormControl(true, { validators: Validators.required, nonNullable: true }),
 
   });
 

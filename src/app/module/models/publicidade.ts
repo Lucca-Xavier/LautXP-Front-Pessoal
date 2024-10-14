@@ -1,6 +1,6 @@
 export interface Publicidade{
     id : number,
     nome: string,
-    status: string,
+    isActive?: boolean,
     arquivo: File | null
 }
