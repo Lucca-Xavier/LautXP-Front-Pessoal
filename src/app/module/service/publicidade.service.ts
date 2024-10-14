@@ -20,7 +20,7 @@ export class PublicidadeService {
     return this.http.get<Publicidade>(this.url + id)
   }
 
-  salvar(data: Publicidade) {
+  salvar(data: FormData) {
     return this.http.post(this.url, data)
   }
 
