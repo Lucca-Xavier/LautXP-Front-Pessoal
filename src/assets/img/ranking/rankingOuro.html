@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico - Primeiro Lugar</title>
+    <style>
+        /* Remove qualquer margem ou espaçamento extra da página */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Evitar rolagem */
+        }
+
+        /* Estilo para a barra do primeiro lugar */
+        .bar-first-place {
+            position: absolute;
+            width: 100%;
+            height: 64px;
+            background: linear-gradient(to left, #fbbd3e, #f7a600); /* Gradiente de ouro */
+            left: 0; /* Grudado ao lado esquerdo */
+            transform: translateY(-50%); /* Ajusta para o centro */
+        }
+    </style>
+</head>
+<body>
+    <div class="bar-first-place"></div>
+</body>
+</html>
