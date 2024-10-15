@@ -1,22 +1,26 @@
-<section class="vh-100" style="background-color: #f8fbff;">
+<section class="vh-100" >
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="card shadow-2-strong" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
 
-                        <h3 class="mb-5">Sign in</h3>
+                        <img src="../../assets/img/brand/LautXpLogo.jpg" alt="Imagem de Login" class="img-fluid mb-4" style="border-radius: 1rem;">
+
+                
 
                         <form [formGroup]="form" (submit)="submit()">
                             <div class="form-outline mb-4">
                                 <app-input [control]="form.controls.email"
-                                    [placeholder]="'Email or username'"></app-input>
+                                    [placeholder]="'Email'"></app-input>
                             </div>
                             <div class="form-outline mb-4">
-                                <app-input [control]="form.controls.password" [placeholder]="'Password'"
+                                <app-input [control]="form.controls.password" [placeholder]="'Senha'"
                                     [type]="'password'"></app-input>
                             </div>
-                            <button class="btn btn-primary btn-lg btn-block" type="submit">Entrar</button>
+                            <button class="btn btn-dark btn-lg btn-block" type="submit">Entrar</button>
+                    
+
                         </form>
 
                         <div class="d-flex justify-content-between align-items-center">
@@ -37,3 +41,9 @@
         </div>
     </div>
 </section>
+
+<style>
+    section {
+        background-color: #000000;
+    }
+</style>

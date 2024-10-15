@@ -8,7 +8,7 @@ import { Publicidade } from '../models/publicidade';
 })
 export class PublicidadeService {
 
-  private url = environment.baseUrl + 'api/publicidade'
+  private url = environment.baseUrl + 'api/publicidade/'
 
   constructor(private http: HttpClient) { }
 
@@ -20,7 +20,7 @@ export class PublicidadeService {
     return this.http.get<Publicidade>(this.url + id)
   }
 
-  salvar(data: Publicidade) {
+  salvar(data: FormData) {
     return this.http.post(this.url, data)
   }
 
