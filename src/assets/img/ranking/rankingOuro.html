@@ -13,19 +13,29 @@
             height: 100%;
             overflow: hidden; /* Evitar rolagem */
         }
-
+            
         /* Estilo para a barra do primeiro lugar */
         .bar-first-place {
             position: absolute;
             width: 100%;
             height: 64px;
             background: linear-gradient(to left, #fbbd3e, #f7a600); /* Gradiente de ouro */
-            left: 0; /* Grudado ao lado esquerdo */
+            left: 5px; /* Grudado ao lado esquerdo */
             transform: translateY(-50%); /* Ajusta para o centro */
+        }
+
+        /* Estilo para o texto interno da barra do ranking */
+        .textoDoRanking {
+            color: rgb(0, 0, 0); 
+            padding-top: 38px; 
+            padding-left: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="bar-first-place"></div>
+    <div class="bar-first-place">
+        <div class="textoDoRanking">
+            Nome
+    </div>
 </body>
 </html>
