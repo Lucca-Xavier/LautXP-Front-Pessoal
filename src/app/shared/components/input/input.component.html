@@ -8,6 +8,7 @@
     [mask]="format"
     [dropSpecialCharacters]="false"
     [ngClass]="mostrarCSSErro(control)"
+    
   />
   <div *ngIf="control.touched && control.invalid" style="color: red">
     <p *ngIf="control.errors && control.errors['celularInvalido']">

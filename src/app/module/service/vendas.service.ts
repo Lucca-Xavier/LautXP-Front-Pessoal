@@ -9,7 +9,7 @@ import { Venda } from '../models/venda';
 })
 export class VendasService {
 
-  private url = environment.baseUrl + 'api/vendas/'
+  private url = environment.baseUrl + 'api/venda/'
 
   constructor(private http: HttpClient) { }
 

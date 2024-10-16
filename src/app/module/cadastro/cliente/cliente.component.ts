@@ -3,18 +3,24 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { CrudClienteComponent } from './crud-cliente/crud-cliente.component';
 import Swal from 'sweetalert2';
+import { ClienteService } from '../../service/cliente.service';
+import { Cliente } from '../../models/cliente';
 
 @Component({
   selector: 'app-cliente',
   templateUrl: './cliente.component.html',
 })
 export class ClienteComponent {
-  clienteService: any;
-  clientesService: any;
+
   appService: any;
-  constructor(private modalService: NgbModal, public toastrService: ToastrService) {
+  constructor(
+    private modalService: NgbModal,
+    private toastrService: ToastrService,
+    private clienteService: ClienteService
+
+  ) {
   }
-  clientes: any[] = [];
+  clientes: Cliente[] = [];
 
   ngOnInit() {
     this.listar()
@@ -22,10 +28,13 @@ export class ClienteComponent {
 
   listar() {
     this.clienteService.listar().subscribe({
-      next: (data: any[]) => {
+      next: (data) => {
         this.clientes = data
       }
     });
+
+    console.log(this.clientes)
+
   }
 
   crud(id: number) {
@@ -48,7 +57,7 @@ export class ClienteComponent {
       showCancelButton: true
     }).then((result) => {
       if (result.value) {
-        this.clientesService
+        this.clienteService
           .excluir(id)
           .subscribe({
             next: () => {

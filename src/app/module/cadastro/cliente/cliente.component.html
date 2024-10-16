@@ -23,16 +23,19 @@
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Cpf</th>
-                <th scope="col">Data de nascimento</th>
+                <th scope="col">Nascimento</th>
+                <th scope="col">Pontos</th>
                 <th scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let item of clientes">
-                <th scope="row">1</th>
-                <td>{{item.id}}</td>
+                <th>{{item.id}}</th>
                 <td>{{item.nome}}</td>
                 <td>{{item.cpf}}</td>
+                <td>{{item.nascimento}}</td>
+                <td>{{item.pontos}}</td>
+
                 <td>
                     <button class="btn btn-sm btn-primary" ngbTooltip="Editar" style="margin-right: 3px;" (click)="crud(item.id)">
                         <span class="fa fa-edit"></span>

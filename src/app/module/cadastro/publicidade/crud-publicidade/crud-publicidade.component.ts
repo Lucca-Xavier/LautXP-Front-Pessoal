@@ -20,6 +20,7 @@ export class CrudPublicidadeComponent {
   form = new FormGroup({
     id: new FormControl(0, { validators: Validators.required, nonNullable: true }),
     nome: new FormControl('', { validators: Validators.required, nonNullable: true }),
+
     status: new FormControl('ativa', { validators: Validators.required, nonNullable: true }),
 
   });

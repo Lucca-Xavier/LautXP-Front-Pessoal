@@ -3,6 +3,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProdutoService } from '../../service/produto.service';
 import { VendasService } from '../../service/vendas.service';
 import { CrudVendasComponent } from './crud-vendas/crud-vendas.component';
+import { ClienteService } from '../../service/cliente.service';
+import { Cliente } from '../../models/cliente';
 
 @Component({
   selector: 'app-vendas',
@@ -11,12 +13,13 @@ import { CrudVendasComponent } from './crud-vendas/crud-vendas.component';
   ]
 })
 export class VendasComponent {
-  clientes: any[] = [];
+  clientes: Cliente[] = [];
 
 
   constructor(
     private modalService: NgbModal,
-    private vendasService: VendasService
+    private vendasService: VendasService,
+    private clienteService: ClienteService
   ) { }
 
 
@@ -25,7 +28,7 @@ export class VendasComponent {
   }
 
   listar() {
-    this.vendasService.listar().subscribe({
+    this.clienteService.listar().subscribe({
       next: (data) => {
         this.clientes = data
       }
@@ -34,7 +37,7 @@ export class VendasComponent {
 
   crud(id: number) {
     const modalRef = this.modalService.open(CrudVendasComponent, { size: 'lg' });
-    modalRef.componentInstance.id = id;
+    modalRef.componentInstance.idCliente = id;
     modalRef.result.then((result: any) => {
       if (result) this.listar()
     })
