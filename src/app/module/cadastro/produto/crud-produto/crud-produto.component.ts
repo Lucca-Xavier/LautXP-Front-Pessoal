@@ -19,11 +19,22 @@ export class CrudProdutoComponent {
     { value: 500, text: '500ml' },
   ];
 
+  multiplicadores: any[] = [
+  { value: 1, text: '1x'},
+  { value: 1.5, text: '1,5x'},
+  { value: 2, text: '2x'},
+  { value: 3, text: '3x'},
+  { value: 5, text: '5x'},
+
+
+  ];
+
   form = new FormGroup({
     id: new FormControl(0, { validators: Validators.required, nonNullable: true }),
     rotulo: new FormControl('', { validators: Validators.required, nonNullable: true }),
     tamanho: new FormControl(300, { validators: Validators.required, nonNullable: true }),
     isActive: new FormControl(true, { validators: Validators.required, nonNullable: true }),
+    multiplicador: new FormControl(1, {validators: Validators.required, nonNullable: true})
 
   });
   

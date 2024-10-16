@@ -18,7 +18,8 @@ export class CrudClienteComponent {
     id: new FormControl(0, { validators: Validators.required, nonNullable: true }),
     nome: new FormControl('', { validators: Validators.required, nonNullable: true }),
     cpf: new FormControl('', { validators: Validators.required, nonNullable: true }),
- //   nascimento: new FormControl('', {validators: Validators.required, nonNullable: true})
+    pontos: new FormControl(0, {validators: Validators.required, nonNullable: true}),
+    nascimento: new FormControl('', {validators: Validators.required, nonNullable: true})
   });
   
 

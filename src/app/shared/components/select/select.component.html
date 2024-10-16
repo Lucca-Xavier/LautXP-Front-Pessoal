@@ -14,8 +14,8 @@
     <option selected [ngValue]="null" *ngIf="permiteNull && !string">
       Selecione...
     </option>
-    <option *ngFor="let item of data" [ngValue]="item.id">
-      {{ item.rotulo }}
+    <option *ngFor="let item of data" [ngValue]="item.value">
+      {{ item.text }}
     </option>
   </select>
 

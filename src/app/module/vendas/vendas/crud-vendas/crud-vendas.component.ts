@@ -17,7 +17,7 @@ export class CrudVendasComponent {
 
   @Input() idCliente: number;
 
-  produtos: Produto[] = []
+  produtos: any[] = []
 
   produtosEstatico: any[] = [
     { value: "Pilsen", text: 'Pilsen' },
@@ -53,7 +53,10 @@ export class CrudVendasComponent {
   listarProdutos(){
     this.produtoService.listar().subscribe({
       next: (data) =>{
-        this.produtos = data
+        this.produtos = data.map(produto =>({
+          value: produto.id,
+          text: produto.rotulo + ' '+ produto.tamanho + "ml"
+        }))
         console.log(this.produtos)
 
       }
