@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laüt XP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        .roboto-condensed {
+            font-family: "Roboto Condensed", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500; /* 100 a 900 */
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="conteudo">
+        <a href="dashboard.component.html"></a>
+    </div>
+
+    <script>
+        fetch('dashboard.component.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('conteudo').innerHTML = data;
+            });
+    </script>
+
+</body>
+
+</html>

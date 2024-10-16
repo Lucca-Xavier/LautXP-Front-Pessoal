@@ -4,6 +4,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { AppService } from 'src/app/app.service';
 import { PublicidadeService } from 'src/app/module/service/publicidade.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-crud-publicidade',
@@ -19,11 +20,13 @@ export class CrudPublicidadeComponent {
   form = new FormGroup({
     id: new FormControl(0, { validators: Validators.required, nonNullable: true }),
     nome: new FormControl('', { validators: Validators.required, nonNullable: true }),
-    arquivo: new FormControl(null as File | null, { validators: Validators.required, nonNullable: true }),
-    isActive: new FormControl(true, { validators: Validators.required, nonNullable: true }),
+
+    status: new FormControl('ativa', { validators: Validators.required, nonNullable: true }),
 
   });
-
+  file: File | null;
+  arquivoSalvo: string;
+  url = environment.fileUrl;
 
   constructor(
     private activeModal: NgbActiveModal,
@@ -38,7 +41,10 @@ export class CrudPublicidadeComponent {
     if (this.id > 0) {
       this.publicidadeService.obter(this.id).subscribe({
         next: (data) => {
-          this.form.patchValue(data)
+          this.form.patchValue(data);
+
+          this.arquivoSalvo = data.arquivo;
+
         }, error: (err) => this.appService.trataErro(err)
       })
     }
@@ -52,46 +58,43 @@ export class CrudPublicidadeComponent {
 
   salvar() {
     if (this.form.valid) {
-      this.publicidadeService.salvar(this.form.getRawValue()).subscribe({
-        next: () => {
-          this.toastrService.success('Sucesso');
-          this.activeModal.close(true)
-        }, error: (err) => this.appService.trataErro(err)
-      })
+
+      if (!this.file) {
+        this.toastrService.error('Anexe um arquivo para salvar!');
+      } else {
+
+        var formData = new FormData();
+        formData.append('anexo', this.file);
+        formData.append('nome', this.form.value.nome!);
+
+        this.publicidadeService.salvar(formData).subscribe({
+          next: () => {
+            this.toastrService.success('Sucesso');
+            this.activeModal.close(true)
+          }, error: (err) => this.appService.trataErro(err)
+        });
+
+      }
     } else {
       this.appService.validarTodosCampos(this.form)
+      this.toastrService.error('Preencha todos os campos para salvar!');
     }
   }
 
 
   fileEvent(fileInput: Event) {
     let input = fileInput.target as HTMLInputElement;
-    let file = input.files ? input.files[0] : null;
+    this.file = input.files ? input.files[0] : null;
 
-    if (file) {
-      this.form.controls.arquivo.setValue(file);
+    if (this.file) {
       let itemId = input.id.toString() + "Name";
-      let fileName = file.name;
+      let fileName = this.file.name;
 
       let h4 = document.getElementById(itemId) as HTMLElement;
       if (h4) {
         h4.innerText = fileName;
       }
-    } else{
-      this.form.controls.arquivo.setErrors({ required: true });
     }
   }
-
-  mostrarCSSErro(control: FormControl) {
-    return {
-      'is-invalid': this.campoValido(control),
-      '': this.campoValido(control)
-    };
-  }
-  campoValido(control: FormControl) {
-    return !control.valid && control.touched;
-  }
-
-
 
 }
