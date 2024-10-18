@@ -31,7 +31,10 @@
         <th> {{item.id}} </th>
         <td> {{item.rotulo}} </td>
         <td> {{item.tamanho}} </td>
-        <td>{{item.isActive}}</td>
+        <td>
+          <p class=" badge rounded-pill" style="min-width: 5.5em;" [ngClass]="item.isActive?'bg-success': 'bg-danger'">
+            {{item.isActive?'Ativa':'Inativa'}}</p>
+        </td>
         <td>
           <button class="btn btn-primary btn-sm" style="margin-right: 3px" (click)="crud(item.id)">
             <span class="fa fa-edit"></span>

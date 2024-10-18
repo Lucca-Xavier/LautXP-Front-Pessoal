@@ -5,6 +5,7 @@ import { VendasService } from '../../service/vendas.service';
 import { CrudVendasComponent } from './crud-vendas/crud-vendas.component';
 import { ClienteService } from '../../service/cliente.service';
 import { Cliente } from '../../models/cliente';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-vendas',
@@ -14,6 +15,15 @@ import { Cliente } from '../../models/cliente';
 })
 export class VendasComponent {
   clientes: Cliente[] = [];
+  nomeFiltro: string = '';
+  cpfFiltro: string = '';
+
+
+  form = new FormGroup({
+    nomeFiltro: new FormControl(''),
+    cpfFiltro: new FormControl('')
+
+  })
 
 
   constructor(
@@ -42,5 +52,25 @@ export class VendasComponent {
       if (result) this.listar()
     })
   }
+
+  pesquisar() {
+    const nomeFiltro = this.form.value.nomeFiltro?.trim();
+    const cpfFiltro = this.form.value.cpfFiltro?.trim();
+
+    if (!nomeFiltro && !cpfFiltro) {
+      this.listar();
+    } else {
+      const filtro = this.form.value.nomeFiltro || this.form.value.cpfFiltro || "";
+      this.vendasService.buscarClientes(filtro).subscribe(data => {
+        this.clientes = data;
+      });
+    }
+  }
+
+  limparFiltros() {
+    this.form.reset();
+    this.listar();
+  }
+
 
 }

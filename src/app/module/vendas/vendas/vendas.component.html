@@ -6,43 +6,63 @@
             </h4>
         </div>
 
-        <div class="col-md-2">
-            <div class="text-right">
+        <div class="card">
+
+            <form [formGroup]="form" (ngSubmit)="pesquisar()">
+                <app-input
+                  [control]="form.controls.nomeFiltro"
+                  [placeholder]="'Nome'"
+                  class="col-md-3"
+                  name="nome">
+                </app-input>
+                <app-input
+                  [control]="form.controls.cpfFiltro"
+                  [placeholder]="'Cpf'"
+                  class="col-md-2"
+                  name="cpf">
+                </app-input>
+                <button type="submit" class="btn btn-primary">Pesquisar</button>
+                <button type="button" class="btn btn-secondary" (click)="limparFiltros()">Limpar</button>
+                </form>
+
+            <div class="col-md-2">
+                <div class="text-right">
+                </div>
             </div>
         </div>
+
+        <hr class="border-light" />
+
+        <table cTable [responsive]="true">
+            <thead cTableColor="light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Cpf</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let item of clientes">
+                    <th>{{item.id}}</th>
+                    <td>{{item.nome}}</td>
+                    <td>{{item.cpf}}</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" ngbTooltip="Editar" style="margin-right: 3px;"
+                            (click)="crud(0)">
+                            <span class="fa fa-edit"></span>
+                        </button>
+                        <button class="btn btn-sm btn-danger" ngbTooltip="Excluir" style="margin-right: 3px;">
+                            <span class="fa fa-trash"></span>
+                        </button>
+                        <button type="button" class="btn btn-success btn-sm" (click)="crud(item.id)">
+                            <!--dentro do for each-->
+                            <span class="fa fa-plus"></span>
+                        </button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
-    <hr class="border-light" />
-
-    <table cTable [responsive]="true">
-        <thead cTableColor="light">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Cpf</th>
-                <th scope="col">Ações</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-            <tr *ngFor="let item of clientes">
-                <th>{{item.id}}</th>
-                <td>{{item.nome}}</td>
-                <td>{{item.cpf}}</td>
-                <td>
-                    <button class="btn btn-sm btn-primary" ngbTooltip="Editar" style="margin-right: 3px;"
-                        (click)="crud(0)">
-                        <span class="fa fa-edit"></span>
-                    </button>
-                    <button class="btn btn-sm btn-danger" ngbTooltip="Excluir" style="margin-right: 3px;">
-                        <span class="fa fa-trash"></span>
-                    </button>
-                    <button type="button" class="btn btn-success btn-sm" (click)="crud(item.id)"> <!--dentro do for each-->
-                        <span class="fa fa-plus"></span>
-                    </button>
-
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
