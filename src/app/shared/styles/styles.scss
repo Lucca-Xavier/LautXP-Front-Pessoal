@@ -1,0 +1,55 @@
+$black: #000000;
+$white: #FFFFFF;
+$grey: #D0CCD0;
+$gold: #E4B363;
+$green: #90c45c;
+
+
+
+
+
+$theme-colors: (
+  "primary": $grey,
+  "secondary": $gold,
+);
+
+
+    .bg-laut-black {
+        background-color: $black !important;
+    }
+    
+    .bg-laut-white {
+        background-color: $white !important;
+    }
+    
+    .bg-laut-grey {
+        background-color: $grey !important;
+    }
+    
+    .bg-laut-gold {
+        background-color: $gold !important;
+    }
+
+    .bg-laut-green {
+        background-color: $green !important;
+    }
+
+    .text-laut-black {
+        color: $black !important;
+    }
+    
+    .text-laut-white {
+        color: $white !important;
+    }
+    
+    .text-laut-grey {
+        color: $grey !important;
+    }
+    
+    .text-laut-gold {
+        color: $gold !important;
+    }
+
+    .text-laut-green {
+        color: $green !important;
+    }

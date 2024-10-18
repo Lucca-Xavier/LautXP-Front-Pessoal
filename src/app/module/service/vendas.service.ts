@@ -25,4 +25,8 @@ export class VendasService {
     return this.http.post(this.url, data)
   }
 
+  buscarClientes(filtro: string) {
+    return this.http.get<Cliente[]>(`${this.url}buscar?filtro=${filtro}`);
+  }
+
 }

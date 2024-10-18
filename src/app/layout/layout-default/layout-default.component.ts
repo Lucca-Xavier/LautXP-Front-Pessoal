@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 import { navItems } from './route';
+import { colors } from '../../shared/styles/styles'
+import { sidebar } from '../../shared/styles/styles'; 
 
 @Component({
   selector: 'app-layout-default',
   template: `
-    <c-sidebar #sidebar="cSidebar" class="docs-sidebar elevation-0 border-end  sidebar sidebar-fixed" id="sidebar" visible
+
+
+    <c-sidebar #sidebar="cSidebar"  [ngStyle]="{'background-color': colors.grey}" class=" docs-sidebar elevation-0 border-end  sidebar sidebar-fixed" id="sidebar" visible
     [colorScheme]="'light'">
     <c-sidebar-brand [brandFull]="{
-      src: 'assets/img/brand/coreui-angular.svg',
+      src: 'assets/img/logo/lautxp.svg',
       width: 200,
       height: 46,
       alt: 'LautXp'
@@ -18,7 +22,8 @@ import { navItems } from './route';
       alt: 'LautXp'
     }" routerLink="./">
     </c-sidebar-brand>
-    <c-sidebar-nav [navItems]="navItems" dropdownMode="close">
+    <c-sidebar-nav  [navItems]="navItems" [ngStyle]="sidebarr"
+  dropdownMode="close">
     </c-sidebar-nav>
     <c-sidebar-toggler *ngIf="!sidebar.narrow" toggle="unfoldable" cSidebarToggle="sidebar"></c-sidebar-toggler>
 </c-sidebar>
@@ -38,4 +43,6 @@ import { navItems } from './route';
 })
 export class LayoutDefaultComponent {
   navItems = navItems;
+  colors = colors
+  sidebarr = sidebar
 }

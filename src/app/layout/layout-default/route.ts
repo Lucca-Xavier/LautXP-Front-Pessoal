@@ -10,7 +10,7 @@ export const navItems: INavData[] = [
         name: 'Vendas',
         url: '/home/vendas',
         icon: 'fa fa-money'
-    },
+    },  
     {
         name: 'Cadastro',
         icon: 'fa fa-plus-square-o',
