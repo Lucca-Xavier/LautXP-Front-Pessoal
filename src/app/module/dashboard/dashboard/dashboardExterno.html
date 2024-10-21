@@ -33,34 +33,28 @@
             font-family: var(--fonte-primaria);
             font-weight: var(--peso-fonte-grossa);
             color: var(--cor-fonte-primaria);
+            height: 100vh;
         }
 
         html,
         body {
-            /* height: 100%; */
             margin: 0;
             padding: 0;
             /* overflow: hidden; */
         }
 
         .container {
-            /* display: flex; */
-            /* flex-direction: column; */
-            /* justify-content: space-between; */
-            /* box-sizing: border-box; */
             margin: 0;
             padding: 0;
         }
 
         .row {
-            height: 100%;
-            display: flex;
+            height: 100vh;
         }
 
-        .col-4 {
+        .col {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
         ul {
@@ -86,244 +80,268 @@
 </head>
 
 <body>
-    <!-- <div class="container"> -->
 
-        <!-- Header com Logo Laut -->
-        <div class="container-fluid" style="padding: 1%;">
-            <div style="display: flex; align-items: center; justify-content: flex-start; width: 100%;">
-                <img class="img-fluid" style="height: 4em;" src="../../../../assets/img/logo/lautxp.svg">
-                <div style="flex-grow: 1; text-align: center;">
-                    <img class="img-fluid" style="height: 4em;" src="../../../../assets/img/logo/ranking.png">
-                </div>
+    <!-- Header com Logo Laut -->
+    <div class="container-fluid" style="padding: 1%;">
+        <div style="display: flex; align-items: center; justify-content: flex-start; width: 100%;">
+            <img class="img-fluid" style="height: 4em;" src="../../../../assets/img/logo/lautxp.svg">
+            <div style="flex-grow: 1; text-align: center;">
+                <img class="img-fluid" style="height: 4em;" src="../../../../assets/img/logo/ranking.png">
             </div>
         </div>
+    </div>
 
-        <!-- Main content com 3 colunas -->
-        <div class="container-fluid">
-            <div class="row">
+    <!-- Main content com 3 colunas -->
+    <div class="container-fluid">
+        <div class="row">
 
-                <!-- Colunas do PODIUM -->
-                <div class="col">
-                    <div class="row">
-                
-                        <!-- PRATA -->
-                        <div class="col text-center d-flex flex-column align-items-center justify-content-end">
-                            <img src="../../../../assets/img/podium/prataMug.png" class="img-fluid">
-                            <p>PRATA</p>
-                            <p>X litros</p>
-                            <img src="../../../../assets/img/podium/prataEspuma.png" class="img-fluid" style="width: 80%;">
-                            <object data="../../../../assets/img/podium/pintPrata.html" class="img-fluid"
-                                style="width: 80%; height: 70%; border: none;"></object>
-                        </div>
-                
-                        <!-- OURO -->
-                        <div class="col text-center d-flex flex-column align-items-center justify-content-end">
-                            <img src="../../../../assets/img/podium/ouroMug.png" class="img-fluid">
-                            <p>OURO</p>
-                            <p>X litros</p>
-                            <img src="../../../../assets/img/podium/ouroEspuma.png" class="img-fluid" style="width: 80%;">
-                            <object data="../../../../assets/img/podium/pintOuro.html" class="img-fluid"
-                                style="width: 80%; height: 100%; border: none;"></object>
-                        </div>
-                
-                        <!-- BRONZE -->
-                        <div class="col text-center d-flex flex-column align-items-center justify-content-end">
-                            <img src="../../../../assets/img/podium/bronzeMug.png" class="img-fluid">
-                            <p>BRONZE</p>
-                            <p>X litros</p>
-                            <img src="../../../../assets/img/podium/bronzeEspuma.png" class="img-fluid" style="width: 80%;">
-                            <object data="../../../../assets/img/podium/pintBronze.html" class="img-fluid"
-                                style="width: 80%; height: 50%; border: none;"></object>
-                        </div>
-                
-                    </div>
-                </div>
-                
+            <!-- Colunas do PODIUM -->
+            <div class="col">
+                <div class="row">
 
-                <!-- Coluna da PREMIAÇÃO e da PUBLICIDADE -->
-                <div class="col">
-                    <!-- PREMIAÇÃO -->
-                    <div
-                        style="border-radius: 50px 0px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px 30px; background-color: var(--cor-fundo-quadro);">
-                        <p class="text-center" style="font-size: 2em;">Premiação</p>
-                        <ol style="list-style-type: none; padding-left: 0; margin: 0;">
-                            <li style="padding-bottom: 5px; display: flex; align-items: center;">
-                                <p style="width: 30px; margin: 0;">1º</p>
-                                <p style="margin: 0; text-align: left;">Premiação</p>
-                            </li>
-                            <li style="padding-bottom: 5px; display: flex; align-items: center;">
-                                <p style="width: 30px; margin: 0;">2º</p>
-                                <p style="margin: 0; text-align: left;">Premiação</p>
-                            </li>
-                            <li style="padding-bottom: 5px; display: flex; align-items: center;">
-                                <p style="width: 30px; margin: 0;">3º</p>
-                                <p style="margin: 0; text-align: left;">Premiação</p>
-                            </li>
-                        </ol>
+                    <!-- PRATA -->
+                    <div class="col text-center d-flex flex-column align-items-center justify-content-end">
+                        <img src="../../../../assets/img/podium/prataMug.png" class="img-fluid">
+                        <p>NOME <!-- PARAMETRO --></p>
+                        <p>X <!-- PARAMETRO --> litros</p>
+                        <img src="../../../../assets/img/podium/prataEspuma.png" class="img-fluid" style="width: 80%;">
+                        <object data="../../../../assets/img/podium/pintPrata.html" class="img-fluid"
+                            style="width: 80%; height: 70%; border: none;"></object>
                     </div>
 
-                    <!-- PUBLICIDADE - CARROSSEL -->
-                    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="15000">
-                        <div class="carousel-inner text-center mt-3">
-                            <div class="carousel-item active">
-                                <img src="../../../../assets/img/publicidade/testePublicidade.jpg" class="img-fluid"
-                                    style="border: 0px; width: 80%; height: 80%;">
-                            </div>
-                        </div>
+                    <!-- OURO -->
+                    <div class="col text-center d-flex flex-column align-items-center justify-content-end">
+                        <img src="../../../../assets/img/podium/ouroMug.png" class="img-fluid">
+                        <p>NOME <!-- PARAMETRO --></p>
+                        <p>X <!-- PARAMETRO --> litros</p>
+                        <img src="../../../../assets/img/podium/ouroEspuma.png" class="img-fluid" style="width: 80%;">
+                        <object data="../../../../assets/img/podium/pintOuro.html" class="img-fluid"
+                            style="width: 80%; height: 100%; border: none;"></object>
+                    </div>
+
+                    <!-- BRONZE -->
+                    <div class="col text-center d-flex flex-column align-items-center justify-content-end">
+                        <img src="../../../../assets/img/podium/bronzeMug.png" class="img-fluid">
+                        <p>NOME <!-- PARAMETRO --></p>
+                        <p>X <!-- PARAMETRO --> litros</p>
+                        <img src="../../../../assets/img/podium/bronzeEspuma.png" class="img-fluid" style="width: 80%;">
+                        <object data="../../../../assets/img/podium/pintBronze.html" class="img-fluid"
+                            style="width: 80%; height: 50%; border: none;"></object>
                     </div>
 
                 </div>
+            </div>
 
-                <!-- Coluna do RANKING -->
-                <div class="col" style="padding-right: 30px;">
-                    <!-- CAMPANHA -->
-                    <div
-                        style="border-radius: 50px 0px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px 30px; background-color: var(--cor-fundo-quadro); visibility: hidden;">
-                        <p class="text-center" style="font-size: 2em;">Campanha</p>
-                        <ol style="list-style-type: none; padding-left: 0; margin: 0;">
-                            <li style="padding-bottom: 5px; display: flex; align-items: center;">
-                                <p style="margin: 0; text-align: left;">Campanha</p>
-                            </li>
-                            <li style="padding-bottom: 5px; display: flex; align-items: center;">
-                                <p style="margin: 0; text-align: left;">Campanha</p>
-                            </li>
-                            <li style="padding-bottom: 5px; display: flex; align-items: center;">
-                                <p style="margin: 0; text-align: left;">Campanha</p>
-                            </li>
-                        </ol>
+            <!-- Coluna da PREMIAÇÃO e da PUBLICIDADE -->
+            <div class="col">
+                <!-- PREMIAÇÃO -->
+                <div
+                    style="border-radius: 50px 0px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px 30px; background-color: var(--cor-fundo-quadro);">
+                    <p class="text-center" style="font-size: 2em;">Premiação</p>
+                    <ol style="list-style-type: none; padding-left: 0; margin: 0;">
+                        <li style="padding-bottom: 5px; display: flex; align-items: center;">
+                            <p style="width: 30px; margin: 0;">1º</p>
+                            <p style="margin: 0; text-align: left;">Premiação <!-- PARAMETRO --></p>
+                        </li>
+                        <li style="padding-bottom: 5px; display: flex; align-items: center;">
+                            <p style="width: 30px; margin: 0;">2º</p>
+                            <p style="margin: 0; text-align: left;">Premiação <!-- PARAMETRO --></p>
+                        </li>
+                        <li style="padding-bottom: 5px; display: flex; align-items: center;">
+                            <p style="width: 30px; margin: 0;">3º</p>
+                            <p style="margin: 0; text-align: left;">Premiação <!-- PARAMETRO --></p>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- PUBLICIDADE - CARROSSEL -->
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+                    <div class="carousel-inner text-center mt-3">
+                        <div class="carousel-item active">
+                            <img src="../../../../assets/img/publicidade/testePublicidade.jpg" class="img-fluid"
+                                style="border: 0px; width: 80%; height: 80%;"> <!-- PARAMETRO -->
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../../../assets/img/publicidade/testePublicidade.jpg" class="img-fluid"
+                                style="border: 0px; width: 80%; height: 80%;"> <!-- PARAMETRO -->
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../../../assets/img/publicidade/testePublicidade.jpg" class="img-fluid"
+                                style="border: 0px; width: 80%; height: 80%;"> <!-- PARAMETRO -->
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../../../assets/img/publicidade/testePublicidade.jpg" class="img-fluid"
+                                style="border: 0px; width: 80%; height: 80%;"> <!-- PARAMETRO -->
+                        </div>
                     </div>
-
-
-                    <!-- LISTA DO RESTANTE DO RANKING -->
-                    <ul class="mt-3"
-                        style="margin: 0; padding: 0; list-style-type: none; height: 100vh; display: flex; flex-direction: column; justify-content: space-between;">
-                        <li style="display: flex; align-items: center; gap: 10px;">
-                            <p
-                                style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 16.5px;;">
-                                4º
-                            </p>
-                            <p
-                                style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
-                                Nome
-                            </p>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 10px;">
-                            <p
-                                style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 16.5px;;">
-                                5º
-                            </p>
-                            <p
-                                style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
-                                Nome
-                            </p>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 10px;">
-                            <p
-                                style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 16.5px;;">
-                                6º
-                            </p>
-                            <p
-                                style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
-                                Nome
-                            </p>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 10px;">
-                            <p
-                                style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 16.5px;;">
-                                7º
-                            </p>
-                            <p
-                                style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
-                                Nome
-                            </p>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 10px;">
-                            <p
-                                style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 16.5px;;">
-                                8º
-                            </p>
-                            <p
-                                style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
-                                Nome
-                            </p>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 10px;">
-                            <p
-                                style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 16.5px;;">
-                                9º
-                            </p>
-                            <p
-                                style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
-                                Nome
-                            </p>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 10px;">
-                            <p
-                                style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 11px;;">
-                                10º
-                            </p>
-                            <p
-                                style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
-                                Nome
-                            </p>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 10px;">
-                            <p
-                                style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 11px;;">
-                                11º
-                            </p>
-                            <p
-                                style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
-                                Nome
-                            </p>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 10px;">
-                            <p
-                                style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 11px;;">
-                                12º
-                            </p>
-                            <p
-                                style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
-                                Nome
-                            </p>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 10px;">
-                            <p
-                                style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 11px;;">
-                                13º
-                            </p>
-                            <p
-                                style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
-                                Nome
-                            </p>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 10px;">
-                            <p
-                                style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 11px;;">
-                                14º
-                            </p>
-                            <p
-                                style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
-                                Nome
-                            </p>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 10px;">
-                            <p
-                                style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 11px;;">
-                                15º
-                            </p>
-                            <p
-                                style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
-                                Nome
-                            </p>
-                        </li>
-                    </ul>
                 </div>
 
             </div>
-        </div>
 
-    <!-- </div> -->
+            <!-- Coluna do RANKING -->
+            <div class="col" style="height: 100vh;">
+                <!-- CAMPANHA // AQUI É PRO FUTURO DA PAGINA, NÃO ALTERAR NADA POR ENQUANTO -->
+                <div
+                    style="border-radius: 50px 0px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px 30px; background-color: var(--cor-fundo-quadro); visibility: hidden;">
+                    <p class="text-center" style="font-size: 2em;">Campanha</p>
+                    <ol style="list-style-type: none; padding-left: 0; margin: 0;">
+                        <li style="padding-bottom: 5px; display: flex; align-items: center;">
+                            <p style="margin: 0; text-align: left;">Campanha</p>
+                        </li>
+                        <li style="padding-bottom: 5px; display: flex; align-items: center;">
+                            <p style="margin: 0; text-align: left;">Campanha</p>
+                        </li>
+                        <li style="padding-bottom: 5px; display: flex; align-items: center;">
+                            <p style="margin: 0; text-align: left;">Campanha</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- LISTA DO RESTANTE DO RANKING -->
+                <ul class="mt-3"
+                    style="margin: 0; padding: 0; list-style-type: none; display: flex; flex-direction: column; justify-content: space-between;">
+                    <li style="display: flex; align-items: center; gap: 10px;">
+                        <p
+                            style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 16.5px;;">
+                            4º
+                        </p>
+                        <p
+                            style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
+                            Nome <!-- PARAMETRO -->
+                        </p>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 10px;">
+                        <p
+                            style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 16.5px;;">
+                            5º
+                        </p>
+                        <p
+                            style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
+                            Nome <!-- PARAMETRO -->
+                        </p>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 10px;">
+                        <p
+                            style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 16.5px;;">
+                            6º
+                        </p>
+                        <p
+                            style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
+                            Nome <!-- PARAMETRO -->
+                        </p>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 10px;">
+                        <p
+                            style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 16.5px;;">
+                            7º
+                        </p>
+                        <p
+                            style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
+                            Nome <!-- PARAMETRO -->
+                        </p>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 10px;">
+                        <p
+                            style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 16.5px;;">
+                            8º
+                        </p>
+                        <p
+                            style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
+                            Nome <!-- PARAMETRO -->
+                        </p>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 10px;">
+                        <p
+                            style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 16.5px;;">
+                            9º
+                        </p>
+                        <p
+                            style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
+                            Nome <!-- PARAMETRO -->
+                        </p>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 10px;">
+                        <p
+                            style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 11px;;">
+                            10º
+                        </p>
+                        <p
+                            style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
+                            Nome <!-- PARAMETRO -->
+                        </p>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 10px;">
+                        <p
+                            style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 11px;;">
+                            11º
+                        </p>
+                        <p
+                            style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
+                            Nome <!-- PARAMETRO -->
+                        </p>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 10px;">
+                        <p
+                            style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 11px;;">
+                            12º
+                        </p>
+                        <p
+                            style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
+                            Nome <!-- PARAMETRO -->
+                        </p>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 10px;">
+                        <p
+                            style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 11px;;">
+                            13º
+                        </p>
+                        <p
+                            style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
+                            Nome <!-- PARAMETRO -->
+                        </p>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 10px;">
+                        <p
+                            style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 11px;;">
+                            14º
+                        </p>
+                        <p
+                            style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
+                            Nome <!-- PARAMETRO -->
+                        </p>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 10px;">
+                        <p
+                            style="margin: 0; font-size: 1.5em; background-color: var(--cor-fundo-posicao-ranking); color: var(--cor-fonte-secundaria); display: inline-block; padding: 5px 11px;;">
+                            15º
+                        </p>
+                        <p
+                            style="margin: 0; font-size: 1.3em; background-color: var(--cor-fundo-nome-cliente); color: var(--cor-fonte-primaria); display: inline-block; padding: 7px 5px; width: 100%;">
+                            Nome <!-- PARAMETRO -->
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        window.addEventListener('load', function () {
+            var bodyHeight = document.body.scrollHeight;
+            var windowHeight = window.innerHeight;
+            var bodyWidth = document.body.scrollWidth;
+            var windowWidth = window.innerWidth;
+
+            var scale = Math.min(windowWidth / bodyWidth, windowHeight / bodyHeight);
+            document.body.style.transform = `scale(${scale})`;
+            document.body.style.transformOrigin = 'top center';
+            document.body.style.width = '100vw';
+        });
+    </script>
+
 </body>
 
 </html>
