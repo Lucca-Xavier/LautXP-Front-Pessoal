@@ -5,23 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animação de Bolhas - Medalha de Ouro</title>
     <style>
-        /* Remove qualquer margem ou espaçamento extra da página */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden; /* Evitar rolagem */
+            overflow: hidden; 
         }
 
-        /* Fixar a animação na parte inferior da página */
         .pint {
             position: absolute;
-            bottom: 0; /* Fixar na parte inferior da página */
-            left: 50%; /* Posiciona no centro */
-            transform: translateX(-50%); /* Ajusta para centralizar corretamente */
-            width: 25%; /* Ajusta a largura em porcentagem */
-            height: 80%; /* Altura conforme especificação */
+            bottom: 0; 
+            left: 50%;
+            transform: translateX(-50%); 
+            width: 100%; 
+            height: 100%; 
             background: linear-gradient(to top, #fbbd3e, #f7a600);
             overflow: hidden;
         }
@@ -34,7 +32,6 @@
             animation: rise 2s infinite ease-in;
         }
 
-        /* Ajuste a posição das bolhas para a nova largura */
         .bubble1 { width: 10px; height: 10px; left: 10%; bottom: -10px; animation-delay: 0s; }
         .bubble2 { width: 15px; height: 15px; left: 20%; bottom: -15px; animation-delay: 0.5s; }
         .bubble3 { width: 8px; height: 8px; left: 70%; bottom: -8px; animation-delay: 1s; }
