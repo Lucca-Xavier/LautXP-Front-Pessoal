@@ -1,12 +1,15 @@
-import { Component, ViewEncapsulation  } from '@angular/core';
-import { Cliente } from '../../models/cliente';
-import { ClienteService } from '../../service/cliente.service';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { Cliente } from 'src/app/module/models/cliente';
+import { ClienteService } from 'src/app/module/service/cliente.service';
+
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboardExterno.html',
+  selector: 'app-dashboard-externo',
+  templateUrl: './dashboard-externo.component.html',
   encapsulation: ViewEncapsulation.None
+
+
 })
-export class DashboardComponent {
+export class DashboardExternoComponent {
   ranking: Cliente[] = [];
   ranking4: Cliente[] = [];
 
@@ -21,6 +24,7 @@ export class DashboardComponent {
       next: (data: Cliente[]) => {
         this.ranking = data;
         this.listar4();
+        console.log(this.ranking4)
       },
       error: (err) => {
         console.error('Erro ao listar ranking:', err);
@@ -34,5 +38,4 @@ export class DashboardComponent {
       this.ranking4.push({ nome: '' } as Cliente);
     }
   }
-
 }

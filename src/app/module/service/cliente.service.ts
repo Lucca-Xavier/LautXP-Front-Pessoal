@@ -15,6 +15,10 @@ export class ClienteService {
     return this.http.get<Cliente[]>(this.url)
   }
 
+  listarRanking(){
+    return this.http.get<Cliente[]>(this.url + "ranking")
+  }
+
   obter(id: number) {
     return this.http.get<Cliente>(this.url + id);
   }

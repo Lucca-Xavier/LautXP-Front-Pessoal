@@ -7,6 +7,10 @@ export const navItems: INavData[] = [
         icon: 'fa fa-bar-chart'
     },
     {
+        name: 'Dashboard Externo',
+        url: '/dashboardexterno'
+    },
+    {
         name: 'Vendas',
         url: '/home/vendas',
         icon: 'fa fa-money'
