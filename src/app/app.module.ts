@@ -19,6 +19,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { AuthInterceptor } from './core/interceptor/auth.interceptor';
 import { LoaderInterceptor } from './core/interceptor/loader.interceptor';
 import { SharedModule } from './shared/shared.module';
+import { DashboardExternoModule } from './dashboard-externo/dashboard-externo.module';
 
 const APP_CONTAINERS = [
   LayoutDefaultComponent,
@@ -62,6 +63,7 @@ export function tokenGetter() {
     NgbModule,
     LoginModule,
     SpinnerComponent,
+    DashboardExternoModule
   ],
   providers: [
     AuthGuard,

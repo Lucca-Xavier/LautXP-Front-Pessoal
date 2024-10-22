@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 import { LayoutDefaultComponent } from './layout/layout-default/layout-default.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardExternoComponent } from './dashboard-externo/dashboard-externo/dashboard-externo.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,13 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     pathMatch: 'full'
+  },
+  {
+    path: 'dashboardexterno',
+    component: DashboardExternoComponent,
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
+
   },
   {
     path: 'home',
