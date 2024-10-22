@@ -7,23 +7,36 @@
         </div>
 
         <div class="card">
-
             <form [formGroup]="form" (ngSubmit)="pesquisar()">
-                <app-input
-                  [control]="form.controls.nomeFiltro"
-                  [placeholder]="'Nome'"
-                  class="col-md-3"
-                  name="nome">
-                </app-input>
-                <app-input
-                  [control]="form.controls.cpfFiltro"
-                  [placeholder]="'Cpf'"
-                  class="col-md-2"
-                  name="cpf">
-                </app-input>
-                <button type="submit" class="btn btn-primary">Pesquisar</button>
-                <button type="button" class="btn btn-secondary" (click)="limparFiltros()">Limpar</button>
-                </form>
+                <!-- Inputs em linha -->
+                <div class="d-flex flex-wrap">
+                  <div class="me-3 flex-fill">
+                    <app-input
+                      [control]="form.controls.nomeFiltro"
+                      [placeholder]="'Nome'"
+                      class="w-100"
+                      name="nome">
+                    </app-input>
+                  </div>
+                  
+                  <div class="me-3 flex-fill">
+                    <app-input
+                      [control]="form.controls.cpfFiltro"
+                      [placeholder]="'Cpf'"
+                      class="w-100"
+                      name="cpf">
+                    </app-input>
+                  </div>
+                </div>
+              
+                <!-- Botões em linha separados dos inputs -->
+                <div class="mt-3 mb-2">
+                  <button type="submit" class="btn btn-primary me-2">Pesquisar</button>
+                  <button type="button" class="btn btn-secondary" (click)="limparFiltros()">Limpar</button>
+                </div>
+              </form>
+              
+              
 
             <div class="col-md-2">
                 <div class="text-right">

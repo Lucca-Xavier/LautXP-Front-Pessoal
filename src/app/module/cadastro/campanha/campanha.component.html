@@ -23,6 +23,9 @@
                 <th>Nome</th>
                 <th>Início</th>
                 <th>Fim</th>
+                <th>Premio 1°</th>
+                <th>Premio 2°</th>
+                <th>Premio 3°</th>
                 <th>Status</th>
                 <th>Ações</th>
             </tr>
@@ -33,6 +36,10 @@
                 <td>{{item.nome}}</td>
                 <td>{{item.inicio | date:'dd/MM/yyyy'}}</td>
                 <td>{{item.fim | date:'dd/MM/yyyy'}}</td>
+                <td>{{item.premio1}}</td>
+                <td>{{item.premio2}}</td>
+                <td>{{item.premio3}}</td>
+
                 <td>
                     <p class=" badge rounded-pill" style="min-width: 5.5em;" [ngClass]="item.isActive?'bg-success': 'bg-danger'">{{item.isActive?'Ativa':'Inativa'}}</p></td>
                 <td>
