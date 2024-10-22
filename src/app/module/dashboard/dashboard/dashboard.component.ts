@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation  } from '@angular/core';
 import { Cliente } from '../../models/cliente';
 import { ClienteService } from '../../service/cliente.service';
+import { CampanhaService } from '../../service/campanha.service';
+import { Campanha } from '../../models/campanha';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboardExterno.html',
@@ -9,11 +11,16 @@ import { ClienteService } from '../../service/cliente.service';
 export class DashboardComponent {
   ranking: Cliente[] = [];
   ranking4: Cliente[] = [];
+  campanha: Campanha[]=[];
 
-  constructor(private clienteService: ClienteService) {}
+  constructor(
+    private clienteService: ClienteService,
+    private campanhaService: CampanhaService
+  ) {}
 
   ngOnInit() {
     this.listar();
+    this.listarCampanha();
   }
 
   listar() {
@@ -27,6 +34,16 @@ export class DashboardComponent {
       }
     });
   }
+
+  listarCampanha() {
+    this.campanhaService.listar().subscribe({
+      next: (data) => {
+        this.campanha = data.filter(campanha => campanha.isActive);
+        console.log(this.campanha)
+      }
+    })
+  }
+
 
   listar4() {
     this.ranking4 = this.ranking.slice(3);

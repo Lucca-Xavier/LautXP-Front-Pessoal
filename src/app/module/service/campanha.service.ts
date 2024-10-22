@@ -15,6 +15,10 @@ export class CampanhaService {
     return this.http.get<Campanha[]>(this.url)
   }
 
+  listarAtiva(){
+    return this.http.get<Campanha>(this.url + 'active')
+  }
+
   obter(id: number) {
     return this.http.get<Campanha>(this.url + id)
   }

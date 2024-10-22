@@ -15,16 +15,14 @@
             --cor-fundo-posicao-ranking: #000000;
             --cor-fundo-nome-cliente: #E4B363;
 
-            /* Fonte e cor da fonte */
             --fonte-primaria: Roboto Condensed, sans-serif;
             --fonte-secundaria: Roboto Condensed, sans-serif;
             --cor-fonte-primaria: #000000;
             --cor-fonte-secundaria: #ffffff;
 
-            /* Pesos de fonte */
             --peso-fonte-normal: 400;
             --peso-fonte-grossa: 700;
-        }
+        } 
 
         body {
             background-image: url('../../../../assets/img/background/bg-laut.png');
@@ -34,6 +32,9 @@
             font-weight: var(--peso-fonte-grossa);
             color: var(--cor-fonte-primaria);
             height: 100vh;
+
+
+            
         }
 
         html,
@@ -141,15 +142,15 @@
                     <ol style="list-style-type: none; padding-left: 0; margin: 0;">
                         <li style="padding-bottom: 5px; display: flex; align-items: center;">
                             <p style="width: 30px; margin: 0;">1º</p>
-                            <p style="margin: 0; text-align: left;">Premiação <!-- PARAMETRO --></p>
+                            <p style="margin: 0; text-align: left;">{{campanha[0].premio1}} <!-- PARAMETRO --></p>
                         </li>
                         <li style="padding-bottom: 5px; display: flex; align-items: center;">
                             <p style="width: 30px; margin: 0;">2º</p>
-                            <p style="margin: 0; text-align: left;">Premiação <!-- PARAMETRO --></p>
+                            <p style="margin: 0; text-align: left;">{{campanha[0].premio2}} <!-- PARAMETRO --></p>
                         </li>
                         <li style="padding-bottom: 5px; display: flex; align-items: center;">
                             <p style="width: 30px; margin: 0;">3º</p>
-                            <p style="margin: 0; text-align: left;">Premiação <!-- PARAMETRO --></p>
+                            <p style="margin: 0; text-align: left;">{{campanha[0].premio3}} <!-- PARAMETRO --></p>
                         </li>
                     </ol>
                 </div>

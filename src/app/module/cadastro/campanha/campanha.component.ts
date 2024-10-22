@@ -21,7 +21,8 @@ export class CampanhaComponent {
     private modalService: NgbModal,
     private campanhaService: CampanhaService,
     private toastrService: ToastrService,
-    private appService: AppService
+    private appService: AppService,
+    
   ) {}
 
   ngOnInit() {
@@ -32,6 +33,7 @@ export class CampanhaComponent {
     this.campanhaService.listar().subscribe({
       next: (data) => {
         this.campanhas = data
+        console.log(data)
       }
     })
   }

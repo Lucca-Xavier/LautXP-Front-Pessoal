@@ -21,6 +21,10 @@ export class CrudCampanhaComponent {
     inicio: new FormControl('', { validators: Validators.required, nonNullable: true }),
     fim: new FormControl('', { validators: Validators.required, nonNullable: true }),
     isActive: new FormControl(true, { validators: Validators.required, nonNullable: true }),
+    premio1: new FormControl('', {validators:Validators.required, nonNullable: true}),
+    premio2: new FormControl('', {validators:Validators.required, nonNullable: true}),
+    premio3: new FormControl('', {validators:Validators.required, nonNullable: true}),
+
   });
 
 
